@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import Sidebar from "./components/Sidebar";
+import Dashboard from "./Views/Dashboard";
+import "./App.css";
+import scrollreveal from "scrollreveal";
 
-function App() {
+export default function App() {
+  useEffect(() => {
+    const sr = scrollreveal({
+      origin: "left",
+      distance: "80px",
+      duration: 1000,
+      reset: false,
+    });
+    sr.reveal(
+      `
+       #sidebar
+    `,
+      {
+        opacity: 0,
+      }
+    );
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Sidebar />
+      <Dashboard />
     </div>
   );
 }
-
-export default App;
