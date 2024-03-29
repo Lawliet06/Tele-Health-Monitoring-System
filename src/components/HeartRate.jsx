@@ -6,7 +6,7 @@ import { AreaChart, Area, Tooltip, ResponsiveContainer } from "recharts";
 import logo1 from "../assets/imgs/heart.png";
 
 
-function Streams() {
+function HeartRate() {
   const data = [
     {
       data: 6780,
@@ -285,4 +285,4 @@ const Section = styled.section`
   }
 `;
 
-export default Streams;
+export default HeartRate;

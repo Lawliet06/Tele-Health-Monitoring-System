@@ -5,7 +5,7 @@ import { BsChevronRight } from "react-icons/bs";
 import music1 from "../assets/heart.png";
 
 
-function TopReleases() {
+function Oxygen() {
   const music = [
 
     {
@@ -117,4 +117,4 @@ const Section = styled.section`
   }
 `;
 
-export default TopReleases;
+export default Oxygen;

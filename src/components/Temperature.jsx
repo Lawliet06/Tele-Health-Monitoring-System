@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { applyCardStyles } from "./ReusableStyles";
 import { BsThreeDots } from "react-icons/bs";
 import { BarChart, Bar, Tooltip, ResponsiveContainer } from "recharts";
-function TargetAudience() {
+function Temperature() {
   const data = [
     {
       uv: 4000,
@@ -31,7 +31,7 @@ function TargetAudience() {
     <Section>
       <div className="title-container">
         <div className="title">
-          <h4>Target Audience</h4>
+          <h4>Temperature</h4>
           <BsThreeDots />
         </div>
       </div>
@@ -92,4 +92,4 @@ const Section = styled.section`
   }
 `;
 
-export default TargetAudience;
+export default Temperature;
