@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import avatar from "../assets/imgs/avatar.png";
 
-import { BiChevronDown } from "react-icons/bi";
+
 function RightSidebar() {
   return (
     <Section id="rightSidebar">
@@ -11,8 +11,7 @@ function RightSidebar() {
         <img src={avatar} alt="avatar" />
       </div>
       <div className="name">
-        <span>Kishan Sheth</span>
-        <BiChevronDown />
+        <span>Timothy</span>
       </div>
     </Section>
   );
