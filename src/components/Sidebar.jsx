@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { RiNeteaseCloudMusicLine } from "react-icons/ri";
+
 import { FiHelpCircle } from "react-icons/fi";
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import AssessmentOutlinedIcon from "@mui/icons-material/AssessmentOutlined";
 import '../assets/css/Sidebar.css'
+import logo from '../assets/imgs/logo.png'; 
 
 function Sidebar() {
   const [showModal, setShowModal] = useState(false);
@@ -22,9 +23,10 @@ function Sidebar() {
 
   return (
     <Aside className="sidebar">
-      <div className="logo">
-        <RiNeteaseCloudMusicLine />
-      </div>
+      
+      <img className='img' src={logo} alt="logo" />
+
+     
 
       <ul className="links">
         <li

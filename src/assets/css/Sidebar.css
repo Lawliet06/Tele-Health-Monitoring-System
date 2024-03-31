@@ -1,9 +1,9 @@
 .sidebar {
-  background-color: var(--dark-background-color);
+  background-color: #0A0A29;
   margin: 10px;
   height: 100%;
   width: max-content;
-  padding: 4rem;
+  padding: 3rem;
   padding-top: 1rem;
   display: flex;
   flex-direction: column;
@@ -13,12 +13,12 @@ svg {
   color: var(--primary-color);
   font-size: 1.5rem;
 }
-.logo {
-  padding-bottom: 30px;
-  svg {
-    font-size: 5rem;
-    margin-bottom: 0px;
-  }
+
+.img {
+  padding-top: 0%;
+  margin-bottom: 10px;
+  width: 210px;
+  height: 210px;
 }
 .links {
   display: flex;
@@ -31,7 +31,7 @@ svg {
     transition: 0.5s ease-in-out;
     cursor: pointer;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     color: white;
     svg {
@@ -39,14 +39,14 @@ svg {
       font-size: 2rem;
     }
     &:hover {
-      box-shadow: 0 0 20px 4px var(--primary-color);
+      box-shadow: 0 0 15px 2px var(--primary-color);
       svg {
         color: var(--primary-color);
       }
     }
   }
   .selected {
-    box-shadow: 0 0 20px 4px var(--primary-color);
+    box-shadow: 0 0 15px 2px var(--primary-color);
     svg {
       color: var(--primary-color);
       background-color: transparent;
@@ -81,4 +81,3 @@ svg {
     display: block;
   }
 }
-

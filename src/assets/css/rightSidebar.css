@@ -1,0 +1,35 @@
+.section {
+    border-radius: 10px;
+    height: 100%;
+    width: auto;
+    background: linear-gradient(#0c0c25, #0b0b3a);
+    
+    
+    padding: 6rem;
+    padding-top: 2rem;
+  }
+  
+  .section .image img {
+    height: 3rem;
+    border-radius: 2rem;
+  }
+  
+  .section .name {
+    display: flex;
+    align-content: center;
+    gap: 0.5rem;
+    color: white;
+  }
+  
+  .section .name svg {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+  }
+  
+  @media screen and (min-width: 280px) and (max-width: 1080px) {
+    .section {
+      padding: 0 2rem;
+      padding-top: 2rem;
+    }
+  }
+  
