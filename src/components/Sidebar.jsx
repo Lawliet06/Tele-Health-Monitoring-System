@@ -22,11 +22,8 @@ function Sidebar() {
   };
 
   return (
-    <Aside className="sidebar">
-      
+    <Aside className="sidebar">   
       <img className='img' src={logo} alt="logo" />
-
-     
 
       <ul className="links">
         <li

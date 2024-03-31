@@ -35,14 +35,18 @@ function Dashboard() {
       </div>
 
       <div className="dashboard-grid">
-        <div className="dashboard-row">
+      <div className="dashboard-row">
           <RightSidebar />
+          
+        </div>
+      <div className="dashboard-row2">
+        <HeartRate />
+          <HeartRate />
+          <HeartRate />
           <HeartRate />
         </div>
-        <div className="dashboard-row2">
-          <Temperature />
-          <HeartRate />
-        </div>
+
+
       </div>
     </section>
   );

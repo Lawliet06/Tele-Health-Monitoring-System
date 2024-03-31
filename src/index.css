@@ -3,7 +3,7 @@
 :root {
   --primary-color: #1c2de5;
   --background-color: #002147;
-  --dark-background-color: #060624;
+  --dark-background-color: #111133;
   --font: "Exo", sans-serif;
 }
 
@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  background: linear-gradient( #0a0a2e, #151561);
+  background: linear-gradient( #000022, #040436);
   background-size: cover;
   background-repeat: no-repeat;
   font-family: var(--font);

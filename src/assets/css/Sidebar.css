@@ -1,10 +1,10 @@
 .sidebar {
   background-color: #0A0A29;
   margin: 10px;
-  height: 100%;
+  height: 98%;
   width: max-content;
   padding: 3rem;
-  padding-top: 1rem;
+  padding-top: 0rem;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -12,10 +12,11 @@
 svg {
   color: var(--primary-color);
   font-size: 1.5rem;
+  
 }
 
 .img {
-  padding-top: 0%;
+  
   margin-bottom: 10px;
   width: 210px;
   height: 210px;
