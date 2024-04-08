@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
-import HeartRate from "../components/HeartRate";
-import Temperature from "../components/Temperature";
+import HeartRate from "../components/Parameters/HeartRate";
+import Temperature from "../components/Parameters/Temperature";
+import Sidebar from "../components/Sidebar";
 
 import scrollreveal from "scrollreveal";
 import "../assets/css/Dashboard.css";
@@ -35,18 +36,16 @@ function Dashboard() {
       </div>
 
       <div className="dashboard-grid">
-      <div className="dashboard-row">
+        <Sidebar />
+        <div className="dashboard-row">
           <RightSidebar />
-          
         </div>
-      <div className="dashboard-row2">
-        <HeartRate />
+        <div className="dashboard-row2">
+          <Temperature />
           <HeartRate />
           <HeartRate />
           <HeartRate />
         </div>
-
-
       </div>
     </section>
   );

@@ -1,132 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { applyCardStyles } from "./ReusableStyles";
+import { applyCardStyles } from "../ReusableStyles";
 import { AreaChart, Area, Tooltip, ResponsiveContainer } from "recharts";
 
-import logo1 from "../assets/imgs/heart.png";
-
+import logo1 from "../../assets/imgs/heart.png";
 
 function HeartRate() {
   const data = [
-    {
-      data: 6780,
-    },
-    {
-      data: 6680,
-    },
-    {
-      data: 6500,
-    },
-    {
-      data: 6300,
-    },
-    {
-      data: 5900,
-    },
-    {
-      data: 5700,
-    },
-    {
-      data: 5500,
-    },
-    {
-      data: 5300,
-    },
-    {
-      data: 5100,
-    },
-    {
-      data: 5090,
-    },
-    {
-      data: 5300,
-    },
-    { data: 4500 },
-    {
-      data: 5000,
-    },
-    {
-      data: 4700,
-    },
-    {
-      data: 4400,
-    },
-    {
-      data: 4800,
-    },
-    {
-      data: 5300,
-    },
-    {
-      data: 5800,
-    },
-    {
-      data: 6000,
-    },
-    {
-      data: 6300,
-    },
-    {
-      data: 6580,
-    },
-    {
-      data: 6500,
-    },
-    {
-      data: 6300,
-    },
-    {
-      data: 6500,
-    },
-    {
-      data: 6700,
-    },
-    {
-      data: 7000,
-    },
-    {
-      data: 7300,
-    },
-    {
-      data: 7500,
-    },
-    {
-      data: 7700,
-    },
-    {
-      data: 8090,
-    },
-    {
-      data: 8190,
-    },
-    {
-      data: 7990,
-    },
-    {
-      data: 5800,
-    },
-    {
-      data: 6000,
-    },
-    {
-      data: 6300,
-    },
-    {
-      data: 6780,
-    },
-
-    {
-      data: 7700,
-    },
-    {
-      data: 7500,
-    },
-    {
-      data: 7300,
-    },
-    {
-      data: 7000,
-    },
     {
       data: 6700,
     },
@@ -167,14 +47,12 @@ function HeartRate() {
       image: logo1,
       serviceName: "Heart Rate",
     },
-
   ];
   return (
     <Section>
       <div className="title-container">
         <div className="title">
           <h4>Heart Rate</h4>
-          <h1>450,210</h1>
         </div>
         <div className="slider">
           <div className="services">
@@ -236,8 +114,12 @@ const Section = styled.section`
       }
     }
     .slider {
+      justify-content: center;
+      align-items: center;
       .services {
         display: flex;
+        justify-content: center;
+        align-items: center;
         gap: 1rem;
         .service {
           display: flex;

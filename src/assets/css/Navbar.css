@@ -16,6 +16,37 @@
     margin-left: 1rem; /* Add spacing between icons */
   }
 
+  .popup {
+    position: absolute;
+    top: calc(100% + 10px); /* Position below the account circle icon */
+    right: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure it's above other elements */
+  }
+  
+  .popup p {
+    margin: 0;
+    padding: 5px 0;
+    color: black;
+  }
+  
+  .popup button {
+    background-color: transparent;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    padding: 5px 10px;
+  }
+  
+  .popup button:hover {
+    background-color: #eee;
+  }
+  
+
   @media screen and (min-width: 280px) and (max-width: 1080px) {
     .nav {
       flex-direction: column;

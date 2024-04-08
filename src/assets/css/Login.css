@@ -1,0 +1,40 @@
+.img {
+  margin-bottom: 0px;
+  width: 210px;
+  height: 210px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: aliceblue;
+  
+}
+.logo2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue;
+    background-color: #010117;
+    margin-bottom: 10px;
+  }
+
+.Main {
+  margin: 20px;
+  margin-left: 35%;
+  margin-bottom: 50px;
+  background-color: #010117;
+}
+
+.Main2 {
+    margin: 5%;
+    width: 50%;
+    margin-left: 25%;
+
+    
+  }
+

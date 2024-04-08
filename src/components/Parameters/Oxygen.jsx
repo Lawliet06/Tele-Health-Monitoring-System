@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { applyCardStyles } from "./ReusableStyles";
+import { applyCardStyles } from "../ReusableStyles";
 import { BsChevronRight } from "react-icons/bs";
-import music1 from "../assets/heart.png";
+import music1 from "../../assets/heart.png";
 
 
 function Oxygen() {

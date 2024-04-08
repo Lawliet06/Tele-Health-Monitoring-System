@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { applyCardStyles } from "./ReusableStyles";
-import { BsThreeDots } from "react-icons/bs";
+import { applyCardStyles } from "../ReusableStyles";
+
 import { BarChart, Bar, Tooltip, ResponsiveContainer } from "recharts";
+import Therm from "../../assets/imgs/Therm.png";
+import "../../assets/css/Temperature.css";
 function Temperature() {
   const data = [
     {
@@ -32,7 +34,7 @@ function Temperature() {
       <div className="title-container">
         <div className="title">
           <h4>Temperature</h4>
-          <BsThreeDots />
+          <img className="imgT" src={Therm} alt="Thermometer" />
         </div>
       </div>
       <div className="chart">
