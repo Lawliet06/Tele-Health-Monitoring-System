@@ -91,7 +91,7 @@ const Login = () => {
 
   return (
     <>
-      {userLoggedIn && <Navigate to={"../Dashboard"} replace={true} />}
+      {userLoggedIn && <Navigate to={"../home"} replace={true} />}
       <div className="container">
       <MDBContainer fluid >
         <MDBRow className="d-flex justify-content-center align-items-center h-100">

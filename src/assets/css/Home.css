@@ -1,0 +1,15 @@
+.HomeSection {
+    width: 100%;
+    margin: auto;
+     /* Add border-radius to the entire section */
+    overflow: hidden; /* Ensure contents do not overflow beyond the rounded corners */
+  }
+  
+  .content-wrapper {
+    display: flex;
+  }
+  
+  .Dashboard {
+    flex: 1;
+  }
+  

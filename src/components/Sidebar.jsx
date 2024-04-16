@@ -23,7 +23,7 @@ function Sidebar() {
 
   return (
     <Aside className="sidebar">   
-      <img className='img' src={logo} alt="logo" />
+      <img className='imgbar' src={logo} alt="logo" />
 
       <ul className="links">
         <li
@@ -95,6 +95,7 @@ function Sidebar() {
               <FiHelpCircle />
               About Us
             </li>
+            
           </ul>
           <div className="close-modal" onClick={toggleModal}>
             &times;

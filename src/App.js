@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Sidebar from "./components/Sidebar";
 import Dashboard from "./Views/Dashboard";
+import Home from "./Views/Home"
 import "./App.css";
 import scrollreveal from "scrollreveal";
 
@@ -36,6 +37,7 @@ export default function App() {
             <Route path="/" element={<Login />} />
             <Route path="/register" element={<Register />} />
             
+            <Route path="/home" element={<Home />} />
             <Route path="/dashboard" element={<Dashboard />} />
             {/* Add more routes as needed */}
           </Routes>

@@ -18,7 +18,6 @@ function Dashboard() {
     });
     sr.reveal(
       `
-        nav,
         .row,
         .row2
     `,
@@ -32,11 +31,10 @@ function Dashboard() {
   return (
     <section className="dashboard-section">
       <div>
-        <Navbar />
+        <h3> User Monitoring Dashboard</h3>
       </div>
-
-      <div className="dashboard-grid">
-        <Sidebar />
+  
+      <div className="dashboard-content">
         <div className="dashboard-row">
           <RightSidebar />
         </div>
@@ -49,6 +47,7 @@ function Dashboard() {
       </div>
     </section>
   );
+  
 }
 
 export default Dashboard;

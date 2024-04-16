@@ -32,6 +32,7 @@ function RightSidebar() {
       <div className="name">
         <span className="firstName">{firstName}</span>
       </div>
+
     </Section>
   );
 }

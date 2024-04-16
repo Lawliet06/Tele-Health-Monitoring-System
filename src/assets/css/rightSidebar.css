@@ -1,10 +1,11 @@
 .section {
     border-radius: 10px;
-    height: 100%;
-    width: auto;
-    background: linear-gradient(#1b0059, #0b0b3a);
+    height:600px;
+    width: max-content;
+    background-color: #001a75;
     padding: 6rem;
     padding-top: 2rem;
+
   }
   
   .section .image img {
