@@ -2,6 +2,7 @@
   height: 100%;
   width: 100%;
   margin: 30px;
+  
 }
 
 .dashboard-section h3 {
@@ -12,24 +13,26 @@
 }
 
 .dashboard-content {
-  display: flex; /* Use flexbox for layout */
+  display: flex; 
 }
 
 .dashboard-row,
 .dashboard-row2 {
-  flex: 1; /* Allow the rows to grow and take up remaining space */
-  height: auto; /* Adjust height to auto */
-  margin: 0 1rem; /* Add margin to the sides */
+  flex: 1; 
+  height: auto; 
+  margin: 0 1rem;
 }
 
 .dashboard-row {
-  max-width: 250px; /* Set a max width for the sidebar */
+  max-width: 250px;
+  margin-left: 0px;
 }
 
 .dashboard-row2 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
   gap: 1rem;
+  margin-left: 20px;
 }
 
 @media screen and (min-width: 280px) and (max-width: 1080px) {

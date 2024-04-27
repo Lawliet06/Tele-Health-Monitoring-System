@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../contexts/authContext/authContext';
-import { doSignOut } from '../firebase/auth';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import '../assets/css/Navbar.css'
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/authContext/authContext";
+import { doSignOut } from "../firebase/auth";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import "../assets/css/Navbar.css";
 
 function Navbar() {
   const [popupVisible, setPopupVisible] = useState(false);
@@ -18,9 +18,9 @@ function Navbar() {
   const handleLogout = async () => {
     try {
       await doSignOut();
-      navigate('/'); // Fix navigation to login page
+      navigate("/"); // Fix navigation to login page
     } catch (error) {
-      console.error('Error logging out:', error);
+      console.error("Error logging out:", error);
     }
   };
 

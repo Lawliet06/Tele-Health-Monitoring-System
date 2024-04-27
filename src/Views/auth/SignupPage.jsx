@@ -21,12 +21,12 @@ const Register = () => {
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
-  const [gender, setGender] = useState("male");
+  const [gender, setGender] = useState("Male");
   const [dob, setDob] = useState(null); // For date of birth
   const [country, setCountry] = useState("india"); // Add this line
   const [isRegistering, setIsRegistering] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
+
   const [showPassword, setShowPassword] = useState(false); // To toggle password visibility
   const [showConfirmPassword, setShowConfirmPassword] = useState(false); // To toggle confirm password visibility
   const { userLoggedIn } = useAuth();
@@ -42,6 +42,7 @@ const Register = () => {
 
       setIsRegistering(true);
       try {
+        const dobString = dob.toLocaleDateString("en-US");
         await doCreateUserWithEmailAndPassword(
           email,
           password,
@@ -50,7 +51,7 @@ const Register = () => {
           phone,
           address,
           gender,
-          dob,
+          dobString,
           country
         );
         setIsRegistering(false);
@@ -88,13 +89,13 @@ const Register = () => {
 
   return (
     <>
-      {userLoggedIn && <Navigate to="../Dashboard" replace={true} />}
+      {userLoggedIn && <Navigate to="../Home" replace={true} />}
 
       <div className="Main2">
         <form className="container" onSubmit={onSubmit}>
           <div className="card">
             <div className="logo2">
-            <img className="img" src={logo} alt="logo" />
+              <img className="img" src={logo} alt="logo" />
               <h1>Patient Registration Form</h1>
             </div>
             <div className="card-body">
@@ -243,20 +244,20 @@ const Register = () => {
 
                     <input
                       type="radio"
-                      checked={gender === "male"}
+                      checked={gender === "Male"}
                       onChange={(e) => setGender(e.target.value)}
                       name="gender"
-                      value="male"
+                      value="Male"
                       className="app-check"
                     />
                     <label>Male</label>
                     <br></br>
                     <input
                       type="radio"
-                      checked={gender === "female"}
+                      checked={gender === "Female"}
                       onChange={(e) => setGender(e.target.value)}
                       name="gender"
-                      value="female"
+                      value="Female"
                       className="app-check"
                     />
                     <label>Female</label>
@@ -277,11 +278,6 @@ const Register = () => {
               {errorMessage && (
                 <span className="text-danger font-weight-bold">
                   {errorMessage}
-                </span>
-              )}
-              {successMessage && (
-                <span className="text-success font-weight-bold">
-                  {successMessage}
                 </span>
               )}
             </div>

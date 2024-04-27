@@ -1,65 +1,52 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { applyCardStyles } from "../ReusableStyles";
+import Lottie from "react-lottie";
+import animationData from "../../assets/imgs/temp.json"; // Import the animation JSON file
+import { getHealthParametersFromFirestore } from "./ParaData"; // Import the function to fetch data from Firestore
 
-import { BarChart, Bar, Tooltip, ResponsiveContainer } from "recharts";
-import Therm from "../../assets/imgs/Therm.png";
 import "../../assets/css/Temperature.css";
-function Temperature() {
-  const data = [
+import logo1 from "../../assets/imgs/heart.png";
+
+function HeartRate() {
+  const [heartRateData, setHeartRateData] = useState(null); // State to store heart rate data
+
+  useEffect(() => {
+    // Fetch heart rate data from Firestore
+    getHealthParametersFromFirestore().then((data) => {
+      // Set the heart rate data to the latest document
+      setHeartRateData(data[data.length - 1]);
+    });
+  }, []);
+
+  const sliderData = [
     {
-      uv: 4000,
-    },
-    {
-      uv: 3000,
-    },
-    {
-      uv: 2000,
-    },
-    {
-      uv: 2780,
-    },
-    {
-      uv: 1890,
-    },
-    {
-      uv: 2390,
-    },
-    {
-      uv: 3490,
+      image: logo1,
+      serviceName: "Heart Rate",
     },
   ];
+
   return (
-    <Section>
+    <Section style={{ height: "300px" }}>
       <div className="title-container">
         <div className="title">
           <h4>Temperature</h4>
-          <img className="imgT" src={Therm} alt="Thermometer" />
         </div>
       </div>
-      <div className="chart">
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart width={500} height={300} data={data}>
-            <Tooltip cursor={{ fill: "#3d741d7a" }} />
-            <defs>
-              <linearGradient id="colorview" x1="0" y1="0" x2="0" y2="1">
-                <stop
-                  offset="40%"
-                  stopColor="var(--primary-color)"
-                  stopOpacity={0.8}
-                />
-                <stop offset="80%" stopColor="#000000ff" stopOpacity={0.3} />
-              </linearGradient>
-            </defs>
-            <Bar
-              dataKey="uv"
-              stackId="a"
-              fill="url(#colorview)"
-              animationBegin={800}
-              animationDuration={2000}
-            />
-          </BarChart>
-        </ResponsiveContainer>
+      <div className="animation-container" style={{ height: "200px" }}>
+        <Lottie
+          options={{
+            loop: true,
+            autoplay: true,
+            animationData: animationData,
+          }}
+          height={180} // Adjust the height as needed
+          width={200} // Adjust the width as needed
+        />
+      </div>
+      <div>
+        {/* Display the heart rate value from the latest document */}
+        {heartRateData && <span>{heartRateData.Temperature} C°</span>}
       </div>
     </Section>
   );
@@ -67,31 +54,55 @@ function Temperature() {
 
 const Section = styled.section`
   ${applyCardStyles}
-  color:white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  color: white;
+
   .title-container {
-    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+
     .title {
-      display: flex;
-      justify-content: space-between;
-      svg {
-        color: var(--primary-color);
-        font-size: 1.3rem;
-        cursor: pointer;
+      h1 {
+        font-size: 2rem;
+        letter-spacing: 0.2rem;
+      }
+    }
+    .slider {
+      justify-content: center;
+      align-items: center;
+      .services {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        .service {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 0.6rem;
+          min-width: 5rem;
+          img {
+            height: 2rem;
+          }
+        }
       }
     }
   }
-  .chart {
-    height: 13rem;
-    .recharts-default-tooltip {
-      background-color: var(--dark-background-color) !important;
-      border: none !important;
-      border-radius: 1rem;
-      box-shadow: 0 0 60px 8px var(--primary-color);
-    }
+
+  .animation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .heart-rate-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    color: white;
+    font-size: 1.5rem;
   }
 `;
 
-export default Temperature;
+export default HeartRate;

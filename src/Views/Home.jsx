@@ -6,7 +6,6 @@ import "../assets/css/Home.css";
 import Dashboard from "./Dashboard";
 import RightSidebar from "../components/RightSidebar";
 
-
 function Home() {
   useEffect(() => {
     const sr = scrollreveal({
@@ -29,15 +28,13 @@ function Home() {
 
   return (
     <section className="HomeSection">
-
-        <Navbar />
-        <div className="content-wrapper">
-          <Sidebar />
-          <Dashboard />
-        </div>
+      <Navbar />
+      <div className="content-wrapper">
+        <Sidebar />
+        <Dashboard />
+      </div>
     </section>
   );
-  
 }
 
 export default Home;

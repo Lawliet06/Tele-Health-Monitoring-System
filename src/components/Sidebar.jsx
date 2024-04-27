@@ -5,8 +5,8 @@ import { FiHelpCircle } from "react-icons/fi";
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import AssessmentOutlinedIcon from "@mui/icons-material/AssessmentOutlined";
-import '../assets/css/Sidebar.css'
-import logo from '../assets/imgs/logo.png'; 
+import "../assets/css/Sidebar.css";
+import logo from "../assets/imgs/logo.png";
 
 function Sidebar() {
   const [showModal, setShowModal] = useState(false);
@@ -22,8 +22,8 @@ function Sidebar() {
   };
 
   return (
-    <Aside className="sidebar">   
-      <img className='imgbar' src={logo} alt="logo" />
+    <Aside className="sidebar">
+      <img className="imgbar" src={logo} alt="logo" />
 
       <ul className="links">
         <li
@@ -95,7 +95,6 @@ function Sidebar() {
               <FiHelpCircle />
               About Us
             </li>
-            
           </ul>
           <div className="close-modal" onClick={toggleModal}>
             &times;
@@ -106,10 +105,7 @@ function Sidebar() {
   );
 }
 
-
-const Aside = styled.aside`
- 
-`;
+const Aside = styled.aside``;
 
 const Modal = styled.div`
   position: fixed;
