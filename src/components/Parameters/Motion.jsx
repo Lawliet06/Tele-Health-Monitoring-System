@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { applyCardStyles } from "../ReusableStyles";
 import Lottie from "react-lottie";
-import animationData from "../../assets/imgs/oxygen.json"; // Import the animation JSON file
+import animationData from "../../assets/imgs/Motion.json"; // Import the animation JSON file
 import { getHealthParametersFromFirestore } from "./ParaData"; // Import the function to fetch data from Firestore
+
+import logo1 from "../../assets/imgs/heart.png";
 
 function HeartRate() {
   const [heartRateData, setHeartRateData] = useState(null); // State to store heart rate data
@@ -18,6 +20,7 @@ function HeartRate() {
 
   const sliderData = [
     {
+      image: logo1,
       serviceName: "Heart Rate",
     },
   ];
@@ -26,7 +29,7 @@ function HeartRate() {
     <Section style={{ height: "300px" }}>
       <div className="title-container">
         <div className="title" style={{ alignItems: "center" }}>
-          <h4>Oxygen</h4>
+          <h4>Motion</h4>
         </div>
       </div>
       <div className="animation-container" style={{ height: "200px" }}>
@@ -36,13 +39,13 @@ function HeartRate() {
             autoplay: true,
             animationData: animationData,
           }}
-          height={500} // Adjust the height as needed
-          width={500} // Adjust the width as needed
+          height={300} // Adjust the height as needed
+          width={400} // Adjust the width as needed
         />
       </div>
       <div>
         {/* Display the heart rate value from the latest document */}
-        {heartRateData && <span>{heartRateData.Oxygen} SpO₂</span>}
+        {heartRateData && <span>{heartRateData.Oxygen} Mph</span>}
       </div>
     </Section>
   );

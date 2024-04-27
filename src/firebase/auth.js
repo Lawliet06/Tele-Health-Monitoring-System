@@ -10,8 +10,22 @@ import {
 } from "firebase/auth";
 import { setDoc, doc } from "firebase/firestore";
 
-export const doCreateUserWithEmailAndPassword = async (email, password, firstName, lastName, phone, address, gender, dob, country) => {
-  const credential = await createUserWithEmailAndPassword(auth, email, password);
+export const doCreateUserWithEmailAndPassword = async (
+  email,
+  password,
+  firstName,
+  lastName,
+  phone,
+  address,
+  gender,
+  dob,
+  country
+) => {
+  const credential = await createUserWithEmailAndPassword(
+    auth,
+    email,
+    password
+  );
   const user = credential.user;
 
   // Add user to Firestore
@@ -38,7 +52,15 @@ export const doSignInWithEmailAndPassword = async (email, password) => {
   return signInWithEmailAndPassword(auth, email, password);
 };
 
-export const doSignInWithGoogle = async (firstName, lastName, phone, address, gender, dob, country) => {
+export const doSignInWithGoogle = async (
+  firstName,
+  lastName,
+  phone,
+  address,
+  gender,
+  dob,
+  country
+) => {
   const provider = new GoogleAuthProvider();
   const result = await signInWithPopup(auth, provider);
   const user = result.user;

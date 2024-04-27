@@ -1,9 +1,12 @@
 .app {
     display: grid;
-    
+
     min-height: 100vh;
     height: max-content;
+    
   }
+
+ 
   
   @media screen and (min-width: 280px) and (max-width: 1080px) {
     .app {

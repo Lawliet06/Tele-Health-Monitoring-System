@@ -1,13 +1,11 @@
 .sidebar {
-  background-color: #0A0A29;
-  margin: 10px;
-  height: 98%;
+  background-color: #09064b;
+  height: auto;
   width: max-content;
-  padding: 3rem;
+  padding: 2rem;
   padding-top: 0rem;
   display: flex;
   flex-direction: column;
-  border-radius: 10px;
 }
 svg {
   color: var(--primary-color);
@@ -15,16 +13,16 @@ svg {
   
 }
 
-.img {
+.imgbar {
   
   margin-bottom: 10px;
-  width: 210px;
-  height: 210px;
+  width: 200px;
+  height: 180px;
 }
 .links {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   list-style-type: none;
   li {
     border-radius: 1rem;
@@ -34,6 +32,7 @@ svg {
     display: flex;
     justify-content: left;
     align-items: center;
+    font-size: small;
     color: white;
     svg {
       color: white;

@@ -91,91 +91,94 @@ const Login = () => {
 
   return (
     <>
-      {userLoggedIn && <Navigate to={"../Dashboard"} replace={true} />}
+      {userLoggedIn && <Navigate to={"../home"} replace={true} />}
       <div className="container">
-      <MDBContainer fluid >
-        <MDBRow className="d-flex justify-content-center align-items-center h-100">
-          <MDBCol col="12">
-            <MDBCard
-
-            className="Main"
-              
-              style={{ borderRadius: "1rem", maxWidth: "400px",  backgroundColor:  '#010117', marginLeft: '35%' }}
-            >
-              <div className="logo">
-                <img className="img" src={logo} alt="logo" />
-                <h2>Account Login</h2>
-              </div>
-
-              <MDBCardBody className="p-5 d-flex flex-column align-items-center mx-auto w-100">
-                <MDBInput
-                  wrapperClass="mb-4 mx-5 w-100"
-                  labelClass="text-white"
-                  label="Email address"
-                  id="formControlLg"
-                  type="email"
-                  size="lg"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-                <MDBInput
-                  wrapperClass="mb-4 mx-5 w-100"
-                  labelClass="text-white"
-                  label="Password"
-                  id="formControlLg"
-                  type="password"
-                  size="lg"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-                {isLoading && (
-                  <ClipLoader color="#ffffff" loading={isLoading} size={30} />
-                )}{" "}
-                {/* Display spinner while loading */}
-                {errorMessage && (
-                  <p className="text-danger mb-3">{errorMessage}</p>
-                )}
-                {resetSuccess && (
-                  <p className="text-success mb-3">
-                    Reset password email sent successfully!
-                  </p>
-                )}
-                <p className="small mb-3 pb-lg-2">
-                  <a
-                    href="#!"
-                    className="text-white-50"
-                    onClick={handleForgotPassword}
-                  >
-                    Forgot password?
-                  </a>
-                </p>
-                <button
-                  className="btn btn-outline-light mx-2 px-5"
-                  size="lg"
-                  style={{ marginBottom: "20px" }}
-                  onClick={onSubmit}
-                  disabled={isLoading}
-                >
-                  {isLoading ? "Signing In..." : "Login"}
-                </button>
-                <div>
-                  <p className="mb-0" style={{color: 'white'}}>
-                    Don't have an account?{" "}
-                    <Link to={"/register"} className="text-white-50 fw-bold">
-                      Sign Up
-                    </Link>
-                  </p>
+        <MDBContainer fluid>
+          <MDBRow className="d-flex justify-content-center align-items-center h-100">
+            <MDBCol col="12">
+              <MDBCard
+                className="Main"
+                style={{
+                  borderRadius: "1rem",
+                  maxWidth: "400px",
+                  backgroundColor: "#001a75",
+                  border: "2px solid #d2d2d2bc",
+                  marginLeft: "30%",
+                  color: "#000000",
+                }}
+              >
+                <div className="logo">
+                  <img className="img" src={logo} alt="logo" />
+                  <h3>Account Login</h3>
                 </div>
-              </MDBCardBody>
-            </MDBCard>
-          </MDBCol>
-        </MDBRow>
-      </MDBContainer>
+
+                <MDBCardBody className="p-5 d-flex flex-column align-items-center mx-auto w-100">
+                  <MDBInput
+                    wrapperClass="mb-4 mx-5 w-100"
+                    labelClass="text-white"
+                    id="formControlLg"
+                    type="email"
+                    placeholder="Email Address"
+                    size="sm"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                  <MDBInput
+                    wrapperClass="mb-4 mx-5 w-100"
+                    labelClass="text-white"
+                    id="formControlLg"
+                    pattern="Password"
+                    type="password"
+                    placeholder="Password"
+                    size="sm"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                  {isLoading && (
+                    <ClipLoader color="#ffffff" loading={isLoading} size={30} />
+                  )}{" "}
+                  {/* Display spinner while loading */}
+                  {errorMessage && (
+                    <p className="text-danger mb-3">{errorMessage}</p>
+                  )}
+                  {resetSuccess && (
+                    <p className="text-success mb-3">
+                      Reset password email sent successfully!
+                    </p>
+                  )}
+                  <p className="small mb-3 pb-lg-2">
+                    <a
+                      href="#!"
+                      className="text-white-50"
+                      onClick={handleForgotPassword}
+                    >
+                      Forgot password?
+                    </a>
+                  </p>
+                  <button
+                    className="btn btn-outline-light mx-2 px-5"
+                    size="lg"
+                    style={{ marginBottom: "20px" }}
+                    onClick={onSubmit}
+                    disabled={isLoading}
+                  >
+                    {isLoading ? "Signing In..." : "Login"}
+                  </button>
+                  <div>
+                    <p className="mb-0" style={{ color: "white" }}>
+                      Don't have an account?{" "}
+                      <Link to={"/register"} className="text-white-50 fw-bold">
+                        Sign Up
+                      </Link>
+                    </p>
+                  </div>
+                </MDBCardBody>
+              </MDBCard>
+            </MDBCol>
+          </MDBRow>
+        </MDBContainer>
       </div>
     </>
-
-
-    
   );
 };
 
