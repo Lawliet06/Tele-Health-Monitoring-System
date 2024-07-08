@@ -100,10 +100,16 @@ const Login = () => {
                 className="Main"
                 style={{
                   borderRadius: "1rem",
+                  display: "flex",
+                  width: "auto",
+                  justifyContent: "center",
+
+                  alignSelf: "center",
+
                   maxWidth: "400px",
                   backgroundColor: "#001a75",
                   border: "2px solid #d2d2d2bc",
-                  marginLeft: "30%",
+            
                   color: "#000000",
                 }}
               >

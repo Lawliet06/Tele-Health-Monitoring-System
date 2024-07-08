@@ -1,4 +1,3 @@
-
 .img {
   margin-bottom: 0px;
   width: 200px;
@@ -12,32 +11,75 @@
   justify-content: center;
   height: 100%;
   color: aliceblue;
-  
 }
+
 .logo2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: aliceblue;
-    background-color: #010117;
-    margin-bottom: 10px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: aliceblue;
+  background-color: #010117;
+  margin-bottom: 10px;
+}
 
 .Main {
+  display: flex;
+  align-self: center;
+  justify-content: center;
   margin: 20px;
+  margin-left: 300px;
   margin-bottom: 50px;
   background-color: #1d1d77;
   color: #010117;
-
-
+  border-radius: 10px; /* Add border-radius for rounded corners */
 }
 
 .Main2 {
-    margin: 5%;
-    width: 50%;
-    margin-left: 25%;
+  margin: 5%;
+  width: 50%;
+  margin-left: 25%;
+  padding: 20px; /* Add padding for better spacing */
+  border-radius: 10px; /* Add border-radius for rounded corners */
+}
 
-    
+@media screen and (max-width: 1080px) {
+.container {
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  width: auto;
+  height: fit-content;
+}
+
+  .img {
+    width: 150px; /* Adjust width for smaller screens */
+    height: 150px; /* Adjust height for smaller screens */
   }
 
+  .Main {
+    margin: 10px;
+    margin-bottom: 30px;
+    padding: 10px; /* Adjust padding for smaller screens */
+    border-radius: 5px; /* Adjust border-radius for smaller screens */
+  }
+
+  .Main2 {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    margin: 5%;
+    width: 100%; /* Adjust width for smaller screens */
+    margin-left: 0%;
+    padding: 10px; /* Adjust padding for smaller screens */
+    border-radius: 5px;
+    h1 {
+      font-size: 20px;
+    } 
+  }
+
+  .logo,
+  .logo2 {
+    padding: 10px; /* Add padding for better spacing on smaller screens */
+  }
+}

@@ -5,7 +5,6 @@ import Lottie from "react-lottie";
 import animationData from "../../assets/imgs/Motion.json"; // Import the animation JSON file
 import { getHealthParametersFromFirestore } from "./ParaData"; // Import the function to fetch data from Firestore
 
-import logo1 from "../../assets/imgs/heart.png";
 
 function HeartRate() {
   const [heartRateData, setHeartRateData] = useState(null); // State to store heart rate data
@@ -18,12 +17,7 @@ function HeartRate() {
     });
   }, []);
 
-  const sliderData = [
-    {
-      image: logo1,
-      serviceName: "Heart Rate",
-    },
-  ];
+
 
   return (
     <Section style={{ height: "300px" }}>
@@ -65,27 +59,6 @@ const Section = styled.section`
         letter-spacing: 0.2rem;
       }
     }
-    .slider {
-      justify-content: center;
-      align-items: center;
-      .services {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-        .service {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          gap: 0.6rem;
-          min-width: 5rem;
-          img {
-            height: 2rem;
-          }
-        }
-      }
-    }
   }
 
   .animation-container {
@@ -94,14 +67,20 @@ const Section = styled.section`
     align-items: center;
   }
 
-  .heart-rate-number {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    color: white;
-    font-size: 1.5rem;
-  }
+  @media screen and (min-width: 280px) and (max-width: 1080px) {
+
+
+    .title {
+      flex-direction: column;
+      align-items: center;
+      h1 {
+        font-size: 1.5rem;
+        letter-spacing: 0.1rem;
+      }
+    }
+
+
+
 `;
 
 export default HeartRate;

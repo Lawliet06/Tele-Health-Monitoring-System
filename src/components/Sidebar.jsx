@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-
+import { useNavigate, useLocation } from "react-router-dom"; // Import useLocation
 import { FiHelpCircle } from "react-icons/fi";
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
@@ -11,51 +11,42 @@ import logo from "../assets/imgs/logo.png";
 function Sidebar() {
   const [showModal, setShowModal] = useState(false);
   const [activeTab, setActiveTab] = useState(0);
+  const navigate = useNavigate(); // Initialize useNavigate
+  const location = useLocation(); // Initialize useLocation
+
+  // Path to tab index mapping
+  const pathToIndex = {
+    "/dashboard": 0,
+    "/track-location": 1,
+    "/report": 2,
+    "/about-us": 3,
+  };
+
+  // Update active tab based on current path
+  useEffect(() => {
+    const currentPath = location.pathname;
+    if (pathToIndex.hasOwnProperty(currentPath)) {
+      setActiveTab(pathToIndex[currentPath]);
+    }
+  }, [location.pathname]); // Re-run the effect when the path changes
 
   const toggleModal = () => {
     setShowModal(!showModal);
   };
 
-  const handleTabClick = (index) => {
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
+  const handleTabClick = (index, path) => {
     setActiveTab(index);
-    toggleModal();
+    navigate(path); // Navigate to the specified path
+    closeModal(); // Close the modal if it's open
   };
 
   return (
     <Aside className="sidebar">
       <img className="imgbar" src={logo} alt="logo" />
-
-      <ul className="links">
-        <li
-          className={activeTab === 0 ? "selected" : ""}
-          onClick={() => handleTabClick(0)}
-        >
-          <DashboardOutlinedIcon />
-          Dashboard
-        </li>
-        <li
-          className={activeTab === 1 ? "selected" : ""}
-          onClick={() => handleTabClick(1)}
-        >
-          <LocationOnOutlinedIcon />
-          Track Location
-        </li>
-        <li
-          className={activeTab === 2 ? "selected" : ""}
-          onClick={() => handleTabClick(2)}
-        >
-          <AssessmentOutlinedIcon />
-          Report
-        </li>
-        <li
-          className={activeTab === 3 ? "selected" : ""}
-          onClick={() => handleTabClick(3)}
-        >
-          <FiHelpCircle />
-          About Us
-        </li>
-      </ul>
-
       {/* Hamburger Menu */}
       <div className="hamburger-menu" onClick={toggleModal}>
         <div></div>
@@ -63,34 +54,65 @@ function Sidebar() {
         <div></div>
       </div>
 
+      <ul className="links">
+        <li
+          className={activeTab === 0 ? "selected" : ""}
+          onClick={() => handleTabClick(0, "/dashboard")}
+        >
+          <DashboardOutlinedIcon />
+          Dashboard
+        </li>
+        <li
+          className={activeTab === 1 ? "selected" : ""}
+          onClick={() => handleTabClick(1, "/track-location")}
+        >
+          <LocationOnOutlinedIcon />
+          Track Location
+        </li>
+        <li
+          className={activeTab === 2 ? "selected" : ""}
+          onClick={() => handleTabClick(2, "/report")}
+        >
+          <AssessmentOutlinedIcon />
+          Report
+        </li>
+        <li
+          className={activeTab === 3 ? "selected" : ""}
+          onClick={() => handleTabClick(3, "/about-us")}
+        >
+          <FiHelpCircle />
+          About Us
+        </li>
+      </ul>
+
       {/* Modal */}
       {showModal && (
         <Modal>
           <ul className="modal-links">
             <li
               className={activeTab === 0 ? "selected" : ""}
-              onClick={() => handleTabClick(0)}
+              onClick={() => handleTabClick(0, "/dashboard")}
             >
               <DashboardOutlinedIcon />
               Dashboard
             </li>
             <li
               className={activeTab === 1 ? "selected" : ""}
-              onClick={() => handleTabClick(1)}
+              onClick={() => handleTabClick(1, "/track-location")}
             >
               <LocationOnOutlinedIcon />
               Track Location
             </li>
             <li
               className={activeTab === 2 ? "selected" : ""}
-              onClick={() => handleTabClick(2)}
+              onClick={() => handleTabClick(2, "/report")}
             >
               <AssessmentOutlinedIcon />
               Report
             </li>
             <li
               className={activeTab === 3 ? "selected" : ""}
-              onClick={() => handleTabClick(3)}
+              onClick={() => handleTabClick(3, "/about-us")}
             >
               <FiHelpCircle />
               About Us
@@ -120,7 +142,6 @@ const Modal = styled.div`
   align-items: center;
   z-index: 9999;
   .modal-links {
-    /* Modal links styles */
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -139,14 +160,14 @@ const Modal = styled.div`
         font-size: 2rem;
       }
       &:hover {
-        box-shadow: 0 0 20px 4px var(--primary-color);
+        box-shadow: 0 0 15px 2px var(--primary-color);
         svg {
           color: var(--primary-color);
         }
       }
     }
     .selected {
-      box-shadow: 0 0 20px 4px var(--primary-color);
+      box-shadow: 0 0 15px 2px var(--primary-color);
       svg {
         color: var(--primary-color);
         background-color: transparent;

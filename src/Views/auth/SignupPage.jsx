@@ -23,7 +23,7 @@ const Register = () => {
   const [address, setAddress] = useState("");
   const [gender, setGender] = useState("Male");
   const [dob, setDob] = useState(null); // For date of birth
-  const [country, setCountry] = useState("india"); // Add this line
+  const [country, setCountry] = useState("malawi"); // Add this line
   const [isRegistering, setIsRegistering] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -211,7 +211,7 @@ const Register = () => {
                   </div>
                 </div>
 
-                <div className="col-lg-6">
+                <div className="col-lg-6" style={{width: '60%'}}>
                   <div className="form-group">
                     <label>Country</label>
                     <select

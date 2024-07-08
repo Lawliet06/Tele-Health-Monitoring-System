@@ -48,7 +48,7 @@ function RightSidebar() {
   return (
     <Section className="section">
       <p>User Profile</p>
-
+      <div className="items">
       <div className="image">
         <img className="usrimg" src={avatar} alt="avatar" />
       </div>
@@ -69,6 +69,7 @@ function RightSidebar() {
         <span className="wght">-</span>
       </div>
       {error && <div className="error">{error}</div>}
+      </div>
     </Section>
   );
 }
