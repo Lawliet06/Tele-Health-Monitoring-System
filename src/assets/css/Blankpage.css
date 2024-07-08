@@ -1,0 +1,16 @@
+.main {
+    overflow: hidden;
+    max-width: max-content;
+    max-height: max-content;
+}
+
+.undercons {
+  
+    background-size: cover;           /* Ensures the image covers the container */
+    background-position: center;      /* Centers the image */
+    background-repeat: no-repeat;     /* Prevents repeating the image */
+    width: 1000px;                      /* Ensures it fits the width of its container */
+    height:500px;
+
+   
+}

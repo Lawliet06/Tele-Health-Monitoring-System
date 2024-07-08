@@ -1,15 +1,30 @@
 .HomeSection {
-    width: 100%;
-    margin: auto;
-     /* Add border-radius to the entire section */
-    overflow: hidden; /* Ensure contents do not overflow beyond the rounded corners */
+  width: 100%;
+  margin: auto;
+  overflow: hidden; /* Ensure contents do not overflow beyond the rounded corners */
+}
+
+.content-wrapper {
+  display: flex;
+
+}
+
+.Dashboard {
+  flex: 1;
+}
+
+@media screen and (max-width: 1080px) {
+  .HomeSection {
+    padding: 10px; /* Adjust padding for smaller screens */
   }
-  
+
   .content-wrapper {
-    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align items */
   }
-  
+
   .Dashboard {
-    flex: 1;
+    width: 100%; /* Allow full width for smaller screens */
+    padding: 5px; /* Adjust padding for better spacing */
   }
-  
+}

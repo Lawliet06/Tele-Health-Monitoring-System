@@ -4,16 +4,16 @@
   width: 260px;
   background-color: #001a75;
   padding: 6rem;
-  align-items: center;
   padding-top: 2rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .section p {
   color: white;
-  text-wrap: nowrap;
-  margin-top: 0%;
+  white-space: nowrap;
+  margin-top: 0;
   font-size: larger;
 }
 
@@ -23,7 +23,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
 .usrimg {
@@ -31,9 +30,7 @@
   width: 110px;
   height: 110px;
   border-radius: 30px;
-
 }
-
 
 
 .name, .dob, .gender, .weight {
@@ -44,7 +41,6 @@
   border-radius: 8px;
   margin-top: 20px;
   font-size: larger;
-  
 }
 
 .name {
@@ -55,10 +51,9 @@
   font-size: 12px;
   color: rgba(186, 186, 186, 0.811);
   margin-top: 2px;
-  margin-bottom: 0%;
+  margin-bottom: 0;
   margin-left: 20px;
 }
-
 
 .firstName, .yr, .gndr, .wght {
   font-size: 20px;
@@ -72,7 +67,63 @@
 
 @media screen and (min-width: 280px) and (max-width: 1080px) {
   .section {
-    padding: 0 2rem;
-    padding-top: 2rem;
+    display: flex;
+    align-self: center;
+    padding: 2rem;
+    height: auto; /* Adjust height to auto for smaller screens */
+    width:max-content; /* Make the width responsive */
+    box-sizing: border-box; /* Include padding in the width */
+
+  }
+
+  .name, .dob, .gender, .weight {
+    height: 25px;
+    position: relative;
+    width: 100%;
+    color: white;
+    border: 1.2px solid #ffffffbc;
+    border-radius: 8px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+  }
+
+  .name p, .dob p, .gender p, .weight p {
+    font-size: 2px;
+    color: rgba(186, 186, 186, 0.811);
+    margin-top: 2px;
+    margin-bottom: 0;
+    margin-left: 20px;
+  }
+  
+
+  .firstName, .yr, .gndr, .wght {
+    font-size: 10px;
+    margin: 10px;
+  }
+
+  .usrimg {
+    width: 80px; /* Adjust image size for smaller screens */
+    height: 80px;
+    margin-top: 20px; /* Reduce margin */
+  }
+
+  .name, .dob, .gender, .weight {
+    width: 100%; /* Make input fields responsive */
+    font-size: medium; /* Adjust font size for smaller screens */
+  }
+
+  .firstName, .yr, .gndr, .wght {
+    font-size: 16px; /* Adjust text size for smaller screens */
+    margin-left: 10px; /* Reduce margin */
+  }
+
+  .name {
+    margin-top: 40px; /* Reduce margin for smaller screens */
+  }
+
+  .section p {
+    font-size: smaller; /* Adjust font size for smaller screens */
   }
 }

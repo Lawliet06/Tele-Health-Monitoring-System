@@ -1,5 +1,3 @@
-
-
 .imgT {
   width: 20px;
   height: 40px;
@@ -29,4 +27,25 @@
   border: none !important;
   border-radius: 1rem;
   box-shadow: 0 0 60px 8px var(--primary-color);
+}
+
+@media screen and (min-width: 280px) and (max-width: 1080px) {
+  .title {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .title svg {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .chart {
+    height: 10rem;
+  }
+  
+  .recharts-default-tooltip {
+    font-size: 0.8rem;
+    box-shadow: 0 0 30px 4px var(--primary-color);
+  }
 }

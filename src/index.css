@@ -23,7 +23,8 @@ body {
   background-repeat: no-repeat;
   font-family: var(--font);
   height: max-content;
-  overflow-x: hidden;
+
+  
 }
 
 ::-webkit-scrollbar {

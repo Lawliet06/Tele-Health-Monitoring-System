@@ -1,4 +1,5 @@
 nav {
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,8 +7,8 @@ nav {
   background-color: #06035a;
   border-bottom: 1px solid #d2d2d2bc;
   padding: 10px 0 20px 0;
-  position:sticky;
-
+  position: sticky;
+  top: 0; /* Ensure it sticks to the top */
 }
 
 .nav h2 {
@@ -19,7 +20,6 @@ nav {
   align-items: center;
   border-color: #0902db;
   padding-left: 60%;
-  
 }
 
 .icons svg {
@@ -57,12 +57,28 @@ nav {
   background-color: #eee;
 }
 
-@media screen and (min-width: 280px) and (max-width: 1080px) {
-  .nav {
+@media screen and (max-width: 1080px) {
+  nav {
     flex-direction: column;
     align-items: center;
-    font-size: smaller;
-    margin: 1rem;
-    margin-bottom: 0;
+    padding: 10px 0;
+  }
+
+  .nav h2 {
+    font-size: medium; /* Adjust font size for smaller screens */
+    margin-bottom: 10px; /* Add margin for spacing */
+  }
+
+  .icons {
+    margin-left: 0; /* Reset margin */
+    padding-left: 0; /* Reset padding */
+    justify-content: center; /* Center align icons */
+
+  }
+
+  .icons svg {
+    font-size: 1.8rem; /* Adjust icon size for smaller screens */
+    margin-left: 2rem; /* Adjust spacing between icons */
+  
   }
 }
